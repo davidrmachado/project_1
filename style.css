@@ -1,0 +1,38 @@
+.color {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    
+}
+
+#color-palette {
+    height: 120px;
+}
+
+#azul {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: blue;
+}
+
+#amarelo {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: yellow;
+}
+
+#vermelho {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: red;
+}
+
+#verde {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: green;
+}
