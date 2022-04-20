@@ -9,11 +9,11 @@
     height: 120px;
 }
 
-#azul {
+#preto {
     border: 1px;
     border-style: solid;
     border-color: black;
-    background-color: blue;
+    background-color: black;
 }
 
 #amarelo {
@@ -23,16 +23,16 @@
     background-color: yellow;
 }
 
+#azul {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: blue;
+}
+
 #vermelho {
     border: 1px;
     border-style: solid;
     border-color: black;
     background-color: red;
-}
-
-#verde {
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    background-color: green;
 }
