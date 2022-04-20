@@ -39,41 +39,36 @@
 #pixel-board {
     border: 1px;
     border-style: solid;
-    border-color: red;
-    width: 510px;
-    height: 510px;
+    border-color: black;
+    width: 210px;
+    height: 210px;
 }
 
 .pixel {
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
     border: 1px;
     border-style: solid;
     border-color: black;
     background-color: white;
 }
 
-#coluna1 {
-    float: left;
-    display: inline-block;
+#linha1 {
+    display: flex;
 }
 
-#coluna2 {
-    float: left;
-    display: inline-block;
+#linha2 {
+    display: flex;
 }
 
-#coluna3 {
-    float: left;
-    display: inline-block;
+#linha3 {
+    display: flex;
 }
 
-#coluna4 {
-    float: left;
-    display: inline-block;
+#linha4 {
+    display: flex;
 }
 
-#coluna5 {
-    float: left;
-    display: inline-block;
+#linha5 {
+    display: flex;
 }
