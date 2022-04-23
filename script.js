@@ -35,29 +35,20 @@ function selecionaPaletaPreta() {
 }
 selecionaPaletaPreta();
 
-// //Função para limpar a seleção :
-
-// function clearSelection() {
-//     for (let i = 0; i < 4; i += 1) {
-//         let eachColor = document.getElementsByClassName("color")[i];
-//         eachColor.className = "color";
-//     }
-// }
-// clearSelection();
-
-//Função para fazer a seleção:
-
+//Função para selecionar qualquer paleta:
 function selectColor(eventoDeOrigem) {
-//For para retirar a classe "seleção" de todos as paletas:
+    //For para retirar a classe "selected" de todos as paletas:
     for (let i = 0; i < 4; i += 1) {
         let eachColor = document.getElementsByClassName("color")[i];
         eachColor.className = "color";
     }
 
+    //Adiciona a classe "selected" ao elemento clicado:
     let corSelecionada = eventoDeOrigem.target;
     corSelecionada.classList.add("selected");
 }
 
+//Escutadores de evento para as quatro paletas:
 let colorOption0 = document.getElementsByClassName("color")[0];
 let colorOption1 = document.getElementsByClassName("color")[1];
 let colorOption2 = document.getElementsByClassName("color")[2];
@@ -66,4 +57,3 @@ colorOption0.addEventListener("click", selectColor);
 colorOption1.addEventListener("click", selectColor);
 colorOption2.addEventListener("click", selectColor);
 colorOption3.addEventListener("click", selectColor);
-
