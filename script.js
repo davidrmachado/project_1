@@ -1,8 +1,9 @@
 //Função para criar a paleta de cores:
+
 let paleta = document.getElementById('color-palette');
 let coresDaPaleta = ['black', 'blue', 'red', 'yellow'];
 
-function criaPaleta() {
+function criarPaleta() {
     for (let i = 0; i < coresDaPaleta.length; i += 1) {
         let pallet = document.createElement('div');
         paleta.appendChild(pallet);
@@ -11,9 +12,10 @@ function criaPaleta() {
         pallet.style.backgroundColor = coresDaPaleta[i];
     }
 }
-criaPaleta();
+criarPaleta();
 
 //Função para criar o quadro 5x5:
+
 let quadro = document.getElementById('pixel-board');
 
 function criaQuadro(valor) {
@@ -25,9 +27,43 @@ function criaQuadro(valor) {
 }
 criaQuadro(25);
 
-//Paleta preta receber classe "selected":
+//Função para a paleta preta receber classe "selected":
+
 function selecionaPaletaPreta() {
     let preto = document.getElementById("black");
     preto.classList.add("selected");
 }
 selecionaPaletaPreta();
+
+// //Função para limpar a seleção :
+
+// function clearSelection() {
+//     for (let i = 0; i < 4; i += 1) {
+//         let eachColor = document.getElementsByClassName("color")[i];
+//         eachColor.className = "color";
+//     }
+// }
+// clearSelection();
+
+//Função para fazer a seleção:
+
+function selectColor(eventoDeOrigem) {
+//For para retirar a classe "seleção" de todos as paletas:
+    for (let i = 0; i < 4; i += 1) {
+        let eachColor = document.getElementsByClassName("color")[i];
+        eachColor.className = "color";
+    }
+
+    let corSelecionada = eventoDeOrigem.target;
+    corSelecionada.classList.add("selected");
+}
+
+let colorOption0 = document.getElementsByClassName("color")[0];
+let colorOption1 = document.getElementsByClassName("color")[1];
+let colorOption2 = document.getElementsByClassName("color")[2];
+let colorOption3 = document.getElementsByClassName("color")[3];
+colorOption0.addEventListener("click", selectColor);
+colorOption1.addEventListener("click", selectColor);
+colorOption2.addEventListener("click", selectColor);
+colorOption3.addEventListener("click", selectColor);
+
