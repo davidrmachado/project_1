@@ -1,7 +1,8 @@
-//Função para criar a paleta de cores:
-
+//  Função para criar a paleta de cores:
 let paleta = document.getElementById('color-palette');
 let coresDaPaleta = ['black', 'blue', 'red', 'yellow'];
+let quadroDePixels = document.getElementById("pixel-board");
+let paletas = document.getElementById("color-palette");
 
 function criarPaleta() {
     for (let i = 0; i < coresDaPaleta.length; i += 1) {
@@ -14,10 +15,9 @@ function criarPaleta() {
 }
 criarPaleta();
 
-//Função para criar o quadro 5x5:
-
+//  Função para criar o quadro de lado x lado:
+let lado = 5;
 let quadro = document.getElementById('pixel-board');
-
 function criaQuadro(valor) {
     for (let i = 0; i < valor; i += 1) {
         let quadrado = document.createElement('div');
@@ -25,35 +25,36 @@ function criaQuadro(valor) {
         quadrado.className = "pixel";
     }
 }
-criaQuadro(25);
+criaQuadro(lado * lado);
 
-//Função para a paleta preta receber classe "selected":
-
+//  Função para a paleta preta receber classe "selected":
 function selecionaPaletaPreta() {
     let preto = document.getElementById("black");
     preto.classList.add("selected");
 }
 selecionaPaletaPreta();
 
-//Função para selecionar qualquer paleta:
+//  Função para selecionar qualquer paleta:
 function selectColor(eventoDeOrigem) {
-    //For para retirar a classe "selected" de todos as paletas:
+    //  For para retirar a classe "selected" de todos as paletas:
     for (let i = 0; i < 4; i += 1) {
         let eachColor = document.getElementsByClassName("color")[i];
         eachColor.className = "color";
     }
-
-    //Adiciona a classe "selected" ao elemento clicado:
+    //  Adiciona a classe "selected" à paleta clicada:
     let corSelecionada = eventoDeOrigem.target;
     corSelecionada.classList.add("selected");
 }
 
-//Escutadores de evento para as quatro paletas:
-let colorOption0 = document.getElementsByClassName("color")[0];
-let colorOption1 = document.getElementsByClassName("color")[1];
-let colorOption2 = document.getElementsByClassName("color")[2];
-let colorOption3 = document.getElementsByClassName("color")[3];
-colorOption0.addEventListener("click", selectColor);
-colorOption1.addEventListener("click", selectColor);
-colorOption2.addEventListener("click", selectColor);
-colorOption3.addEventListener("click", selectColor);
+//  Escutador de evento para das paletas:
+paletas.addEventListener("click", selectColor);
+
+//  Função para colorir cada pixel:
+function colorIntoPixel(e) {
+let selectedColor = document.getElementsByClassName("selected")[0];
+let newPixelColor = selectedColor.style.backgroundColor;
+e.target.style.backgroundColor = newPixelColor;
+}
+
+// Escutador de evento do quadro de pixel:
+quadroDePixels.addEventListener("click", colorIntoPixel);
