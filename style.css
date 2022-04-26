@@ -1,6 +1,6 @@
 .color {
     height: 100px;
-    width: 100px;    
+    width: 100px;
     display: inline-block;
     margin-right: 10px;
     border: 1px solid black;
@@ -17,4 +17,18 @@
     border: 1px solid black;
     display: inline-block;
     background-color: white;
+}
+
+#clear-board{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid green;
+    padding: 10px 5px 1px 5px;
+    position: relative;
+    display: inline-block;
+    border-radius: 5%;
+    background-color: green;
+    text-align: center;
+    vertical-align: middle;
 }
